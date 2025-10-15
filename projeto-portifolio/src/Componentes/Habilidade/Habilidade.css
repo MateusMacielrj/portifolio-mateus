@@ -1,0 +1,112 @@
+/* ======== Estilo base (Mobile First) ======== */
+.habilidades {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.habilidades h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.habilidades-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.habilidade-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* garante que barra ocupe 100% */
+}
+
+.habilidade-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.habilidade-barra-fundo {
+  width: 100%;
+  height: 12px;
+  background: #e4e4e4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.habilidade-barra-progresso {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.6s ease-in-out;
+  border-radius: 8px 0 0 8px; /* borda arredondada só à esquerda */
+}
+
+/* ======== Telas médias ======== */
+@media (min-width: 768px) {
+  .habilidades {
+    max-width: 800px;
+    padding: 2.5rem;
+  }
+}
+
+/* ======== Desktop ======== */
+/* ======== Desktop ======== */
+@media (min-width: 1024px) {
+  .habilidades {
+    max-width: 1100px;
+  }
+
+  .habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 4rem;
+  }
+
+  .habilidade-info {
+    font-size: 1.3rem; /* maior no desktop */
+  }
+
+  .habilidade-barra-fundo {
+    height: 16px; /* antes 12px, só no desktop */
+  }
+
+  .habilidades h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ======== Telas grandes ======== */
+@media (min-width: 1440px) {
+  .habilidades {
+    max-width: 1200px;
+  }
+
+  .habilidades-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 3rem;
+  }
+
+  .habilidade-info {
+    font-size: 1.4rem;
+  }
+
+  .habilidade-barra-fundo {
+    height: 18px; /* aumenta mais em telas grandes */
+  }
+
+  .habilidades h2 {
+    font-size: 2.6rem;
+  }
+}

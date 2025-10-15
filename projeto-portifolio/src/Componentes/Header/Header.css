@@ -1,0 +1,195 @@
+/* evita scroll horizontal causado pelo menu fora da tela */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* header fixo no topo */
+.header {
+  position: fixed; /* fixa o header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* garante que fique acima do conteúdo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #131B2E;
+  color: white;
+  border-bottom: 1px solid #14B8A6;
+  transition: box-shadow 0.3s ease;
+}
+
+/* sombra ao rolar */
+.header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* nav (base) - escondido por padrão com transform + opacity + visibility */
+.nav {
+  position: absolute;
+  top: 60px; /* abaixo do header */
+  right: 0;
+  width: 200px;
+  height: 15rem;
+  background: rgba(19, 27, 46, 0.95);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transform: translateX(100%); /* escondido fora da tela à direita */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  z-index: 40;
+}
+
+/* quando aberto: visível e interativo */
+.nav.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* lista */
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* links com underline animado e mudança de cor */
+.nav a {
+  position: relative; /* necessário para o ::after */
+  color: white; /* cor inicial */
+  text-decoration: none;
+  padding-bottom: 2px; /* espaço para o underline */
+  transition: color 0.3s ease; /* animação da cor */
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0; /* começa da direita */
+  height: 2px; /* espessura do underline */
+  width: 100%;
+  background-color: #14B8A6; /* cor do underline */
+  transform: scaleX(0); /* começa invisível */
+  transform-origin: right; /* cresce da direita para a esquerda */
+  transition: transform 0.3s ease;
+}
+
+/* hover: underline + cor do texto */
+.nav a:hover {
+  color: #14B8A6; /* muda cor do texto */
+}
+
+.nav a:hover::after {
+  transform: scaleX(1); /* anima underline */
+}
+
+/* botão hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    right: 0;
+    width: 200px;
+    height: 15rem;
+    top: 60px;
+    transform: translateX(100%); /* off-screen por padrão */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+/* ========== TABLET ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    left: 0;
+    right: 0;
+    top: 60px;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    transform: translateY(-8px); /* fecha deslocando pra cima */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.24s ease, opacity 0.24s ease;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* ========== DESKTOP ========== */
+@media (min-width: 1025px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    margin-right: 43rem;
+    font-size: 2rem;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .header {
+    height: 7rem;
+  }
+
+  h1 {
+    margin-left: 45rem;
+  }
+}
+
+/* espaçamento do conteúdo para compensar header fixo */
+#hero {
+  padding-top: 7rem;
+}

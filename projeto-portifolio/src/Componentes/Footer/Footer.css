@@ -1,0 +1,126 @@
+/* ===== Footer (Mobile First) ===== */
+.footer-container {
+  background-color: rgb(21, 31, 47);
+  color: #fff;
+  padding: 3rem 1rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Container principal das colunas */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Cada coluna */
+.footer-col {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Nome principal */
+.footer-col .nome {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Texto descritivo */
+.footer-col p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #14b8a6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0d9488;
+}
+
+/* Títulos das colunas */
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #14b8a6;
+}
+
+/* Listas */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: #14b8a6;
+}
+
+/* Informações de contato */
+.contact-info span {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+
+@media (min-width: 1025px) {
+  .footer-content {
+    flex-direction: row; /* Agora um do lado do outro */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left; /* Alinha o texto à esquerda */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-col {
+    width: 22%;
+    max-width: none;
+  }
+
+  /* Nome volta para alinhamento à esquerda */
+  .footer-col .nome {
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}

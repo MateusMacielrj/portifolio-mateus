@@ -1,0 +1,111 @@
+.servicos {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #1e479a, #2a5bb0);
+}
+
+.descricao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descricao p {
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+.card-serv {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  border: solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #102248;
+  color: white;
+  gap: 1rem;
+  width: 90%;
+  height: 30rem;
+
+  /* Animação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-serv:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-serv:active {
+  transform: translateY(-5px) scale(0.98);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-serv img {
+  width: 6rem;
+  border-radius: 3rem;
+}
+
+.tecnologias {
+  text-decoration: underline;
+  list-style-type: none;
+}
+
+.card-serv button {
+  height: 3rem;
+  width: 70%;
+  border-radius: 0.8rem;
+
+  /* Animação */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.card-serv button:hover {
+  transform: scale(1.05);
+  background-color: #1f70d2;
+}
+
+.card-serv button:active {
+  transform: scale(0.95);
+  background-color: #174b8a;
+}
+
+@media (min-width: 1025px) {
+
+  .servicos {
+    height: 180rem;
+  }
+
+  .descricao h1 {
+    margin-right: 44rem;
+    font-size: 5rem;
+    color: white;
+  }
+
+  .descricao p {
+    font-size: 2rem;
+  }
+
+  .card-serv {
+    width: 30%;
+    font-size: 2rem;
+    height: 50rem;
+  }
+
+  .card-serv button {
+    width: 25%;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
