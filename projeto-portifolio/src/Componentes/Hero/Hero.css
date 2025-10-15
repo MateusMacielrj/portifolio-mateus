@@ -1,4 +1,5 @@
-/* Estilo base: Mobile primeiro */
+/* ====================== HERO ====================== */
+/* Estilo base: Mobile first */
 .hero {
   background-color: #1b2538;
   color: white;
@@ -13,14 +14,14 @@
 .hero img {
   margin-top: 2rem;
   width: 10rem;
-  border-radius: 10rem;
+  border-radius: 50%;
   border: solid white 1px;
 }
-
 
 .nome{
   color: #14B8A6;
 }
+
 .hero h1 {
   text-align: center;
   margin: 1rem 0;
@@ -48,15 +49,15 @@
 }
 
 .botoes button {
-  height: 5rem;
+  height: 4rem;   /* tamanho mais proporcional */
   width: 7rem;
   border-radius: 1rem;
   background-color: #1B2538;
   color: white;
-  font-size: larger;
+  font-size: 1rem;
   font-weight: 500;
   border: solid white 2px;
-  transition: 0.3s; /* efeito suave */
+  transition: 0.3s; 
 }
 
 .botoes button:hover {
@@ -64,14 +65,14 @@
   cursor: pointer;
 }
 
-/* Tablet: entre 769px e 1024px */
+/* ====================== TABLET ====================== */
 @media (min-width: 769px) and (max-width: 1024px) {
- .hero {
+  .hero {
     flex-direction: row;        
     justify-content: center;
     align-items: center;
-    height: 40rem;              
-    gap: 3rem;                   
+    height: 50vh;              
+    gap: 2rem;                   
     padding: 2rem;
   }
 
@@ -80,14 +81,18 @@
   }
 
   .hero img {
-    width: 15rem;                /* imagem menor */
+    width: 15rem;              
     margin: 0;
   }
 
- 
+  .botoes button {
+    width: 10rem;
+    height: 4.5rem;
+    font-size: 1.2rem;
+  }
 }
 
-/* Desktop: acima de 1024px */
+/* ====================== DESKTOP ====================== */
 @media (min-width: 1025px) {
   .hero {
     flex-direction: row;
@@ -95,41 +100,38 @@
     align-items: center;
     min-height: 100vh;           
     padding: 3rem;
-  
   }
 
   .hero img {
-    width: 40rem; 
-    border-radius: 20rem;   
-    margin-bottom: 18rem;  
-        
+    width: 20rem;       /* tamanho ajustado */
+    border-radius: 50%;   
+    margin-bottom: 2rem;  
   }
 
   .conteudo {
-    max-width: 50rem;
-    margin-bottom: 18rem;    
-     
+    max-width: 40rem;
+    margin-bottom: 2rem;    
   }
 
-
-  .hero h1 {font-size: 4rem;
+  .hero h1 {
+    font-size: 3rem;
   }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-.hero p {
-  font-size: 2rem;    
-  line-height: 1.8;      
-  max-width: 100rem;      
-  margin-top: 1.5rem;
-  text-align: left;
+  .hero p {
+    font-size: 1.2rem;    
+    line-height: 1.6;      
+    max-width: 40rem;      
+    margin-top: 1rem;
+    text-align: left;
+  }
 
-}
-
-.botoes button {
-width: 15rem;
-font-size: 1.5rem;
-}
+  .botoes button {
+    width: 12rem;
+    height: 4.5rem;
+    font-size: 1.2rem;
+  }
 }
