@@ -1,41 +1,46 @@
 .servicos {
-  border: solid;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #1e479a, #2a5bb0);
+  padding: 3rem 1rem;
+  gap: 3rem;
 }
 
 .descricao {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.descricao h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .descricao p {
-  font-size: 0.7rem;
-  margin-top: 1rem;
-  color: white;
+  font-size: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
 }
 
 .card-serv {
-  margin-top: 2rem;
+  background-color: #102248;
+  color: white;
   border-radius: 1rem;
-  border: solid 1px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  background-color: #102248;
-  color: white;
   gap: 1rem;
   width: 90%;
-  height: 30rem;
-
-  /* Animação */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -57,55 +62,70 @@
 
 .tecnologias {
   text-decoration: underline;
-  list-style-type: none;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* ===================== BOTÕES ===================== */
 .card-serv button {
-  height: 3rem;
-  width: 70%;
-  border-radius: 0.8rem;
-
-  /* Animação */
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: #1f70d2;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
+  min-width: 150px;
+  max-width: 250px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .card-serv button:hover {
   transform: scale(1.05);
-  background-color: #1f70d2;
+  background-color: #174b8a;
 }
 
 .card-serv button:active {
   transform: scale(0.95);
-  background-color: #174b8a;
+  background-color: #0f356f;
 }
 
-@media (min-width: 1025px) {
-
-  .servicos {
-    height: 180rem;
-  }
-
-  .descricao h1 {
-    margin-right: 44rem;
-    font-size: 5rem;
-    color: white;
-  }
-
-  .descricao p {
-    font-size: 2rem;
+/* ===================== RESPONSIVO ===================== */
+@media (min-width: 768px) {
+  .cards-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .card-serv {
     width: 30%;
-    font-size: 2rem;
-    height: 50rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .descricao h1 {
+    font-size: 3.5rem;
+  }
+
+  .descricao p {
+    font-size: 1.5rem;
+  }
+
+  .card-serv {
+    font-size: 1.2rem;
+    height: auto;
   }
 
   .card-serv button {
-    width: 25%;
-    height: 5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    width: auto;
+    min-width: 150px;
+    max-width: 200px;
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
 }
