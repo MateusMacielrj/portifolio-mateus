@@ -1,0 +1,191 @@
+/* ===================== BASE ===================== */
+
+/* evita scroll horizontal e rolagem suave */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* header fixo no topo */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #131B2E;
+  color: white;
+  border-bottom: 1px solid #14B8A6;
+  transition: box-shadow 0.3s ease;
+}
+
+/* sombra ao rolar */
+.header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* logo/título */
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* botão hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===================== NAV ===================== */
+.nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #14B8A6;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+  color: #14B8A6;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    height: auto;
+    background: rgba(19, 27, 46, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+/* ===================== TABLET ===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(19, 27, 46, 0.95);
+    flex-direction: row;
+    justify-content: space-around;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.24s ease, opacity 0.24s ease;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* ===================== DESKTOP ===================== */
+@media (min-width: 1025px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .header {
+    height: 7rem;
+  }
+}
+
+/* ===================== ESPAÇAMENTO CONTEÚDO ===================== */
+#hero {
+  padding-top: 7rem; /* compensa o header fixo */
+}
