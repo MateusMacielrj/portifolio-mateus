@@ -1,126 +1,333 @@
-/* ===== Footer (Mobile First) ===== */
+/* =========================
+   FOOTER
+========================= */
+
 .footer-container {
-  background-color: rgb(21, 31, 47);
-  color: #fff;
-  padding: 3rem 1rem;
-  font-family: sans-serif;
-  text-align: center;
+  width: 100%;
+  padding: 80px 30px 0;
+
+  background: #050505;
+  color: #ffffff;
+
+  border-top: 1px solid #1c1c1c;
 }
 
-/* Container principal das colunas */
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
 .footer-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding-bottom: 70px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 0.9fr 1fr;
+
+  gap: 70px;
+}
+
+
+/* =========================
+   COLUNAS
+========================= */
+
+.footer-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
 }
 
-/* Cada coluna */
-.footer-col {
-  width: 100%;
-  max-width: 300px;
-}
-
-/* Nome principal */
-.footer-col .nome {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-/* Texto descritivo */
-.footer-col p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Ícones sociais */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-icons a {
-  color: #14b8a6;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #0d9488;
-}
-
-/* Títulos das colunas */
 .footer-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #14b8a6;
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-/* Listas */
+
+/* =========================
+   IDENTIDADE
+========================= */
+
+.footer-about {
+  max-width: 330px;
+}
+
+.footer-logo {
+  margin: 0 0 20px !important;
+
+  color: #ffffff !important;
+
+  font-size: 25px !important;
+  font-weight: 600 !important;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px !important;
+
+  text-transform: none !important;
+}
+
+.footer-logo span {
+  color: #d4af37;
+}
+
+.footer-about p {
+  margin: 0 0 25px;
+
+  color: #777777;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.footer-frase {
+  position: relative;
+
+  padding-left: 18px;
+
+  color: #666666;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  font-style: italic;
+}
+
+.footer-frase::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 4px;
+
+  width: 2px;
+  height: 32px;
+
+  background: #d4af37;
+}
+
+
+/* =========================
+   LISTAS
+========================= */
+
 .footer-col ul {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
   margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.footer-col li {
-  margin-bottom: 0.5rem;
+.footer-col ul li {
+  color: #777777;
+
+  font-size: 12px;
+
+  line-height: 1.5;
 }
 
-/* Links */
-.footer-col a {
-  color: #fff;
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-col ul li a {
+  color: #777777;
+
   text-decoration: none;
-  transition: color 0.3s;
+
+  transition:
+    color 0.3s ease,
+    padding 0.3s ease;
 }
 
-.footer-col a:hover {
-  color: #14b8a6;
+.footer-col ul li a:hover {
+  padding-left: 5px;
+
+  color: #d4af37;
 }
 
-/* Informações de contato */
-.contact-info span {
-  display: block;
-  margin-bottom: 0.3rem;
+
+/* =========================
+   CONTATO
+========================= */
+
+.contact-info ul {
+  gap: 20px;
 }
 
-/* Rodapé inferior */
+.contact-info li {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.contact-info li > span:first-child {
+  color: #d4af37;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.contact-info li > span:last-child,
+.contact-info li a {
+  color: #777777;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.contact-info li a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================
+   RODAPÉ INFERIOR
+========================= */
+
 .footer-bottom {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  opacity: 0.7;
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 25px 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #1c1c1c;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+}
+
+.footer-bottom span {
+  color: #666666;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
 
-@media (min-width: 1025px) {
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .footer-container {
+    padding: 70px 30px 0;
+  }
+
   .footer-content {
-    flex-direction: row; /* Agora um do lado do outro */
-    justify-content: space-between;
-    align-items: flex-start;
-    text-align: left; /* Alinha o texto à esquerda */
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 50px;
   }
 
-  .footer-col {
-    width: 22%;
-    max-width: none;
+  .footer-about {
+    max-width: 400px;
   }
 
-  /* Nome volta para alinhamento à esquerda */
-  .footer-col .nome {
-    text-align: left;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .footer-container {
+    padding: 60px 20px 0;
   }
 
-  .social-icons {
-    justify-content: flex-start;
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-bottom: 50px;
+  }
+
+  .footer-about {
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    font-size: 23px !important;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 18px;
+
+    font-size: 11px;
+  }
+
+  .footer-col ul {
+    gap: 11px;
+  }
+
+  .footer-col ul li {
+    font-size: 12px;
+  }
+
+  .contact-info ul {
+    gap: 16px;
   }
 
   .footer-bottom {
-    text-align: center;
-    margin-top: 3rem;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 20px 0;
   }
+
+  .footer-bottom p,
+  .footer-bottom span {
+    font-size: 9px;
+  }
+
 }

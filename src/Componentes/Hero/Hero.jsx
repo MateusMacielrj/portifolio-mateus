@@ -13,7 +13,9 @@ function Hero() {
 
   useEffect(() => {
     const intervalo = setInterval(() => {
-      indexRef.current = (indexRef.current + 1) % dinamico.length;
+      indexRef.current =
+        (indexRef.current + 1) % dinamico.length;
+
       setTexto(dinamico[indexRef.current]);
     }, 2000);
 
@@ -22,32 +24,125 @@ function Hero() {
 
   return (
     <section className="hero" id="hero">
-      <div className="conteudo">
-        <h1>
-          Olá, eu sou <span className="nome">Mateus Maciel</span>
-        </h1>
-        <h2>{texto}</h2>
-        <p>
-          Transformo ideias em experiências digitais incríveis. Especializado em
-          React, JavaScript e desenvolvimento front-end moderno.
-        </p>
 
-        <div className="botoes">
-          <button
-            onClick={() => window.open("https://github.com/MateusMacielrj", "_blank")}
-          >
-            Ver projetos
-          </button>
+      <div className="hero-container">
 
-          <button
-            onClick={() => window.open("https://wa.me/21965890511", "_blank")}
-          >
-            Entre em contato
-          </button>
+        {/* CONTEÚDO */}
+        <div className="hero-content">
+
+          <span className="hero-label">
+            DESENVOLVEDOR FRONT-END
+          </span>
+
+          <h1>
+            Olá, eu sou
+            <br />
+            <span>Mateus Maciel</span>
+          </h1>
+
+          <h2>{texto}</h2>
+
+          <p>
+            Transformando ideias em experiências digitais modernas,
+            funcionais e acessíveis. Especialista em React e apaixonado
+            por desenvolver soluções que geram resultados.
+          </p>
+
+          <div className="hero-buttons">
+
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/MateusMacielrj",
+                  "_blank"
+                )
+              }
+            >
+              Ver meus projetos
+              <span>→</span>
+            </button>
+
+            <button
+              className="secondary"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/21965890511",
+                  "_blank"
+                )
+              }
+            >
+              Entrar em contato
+            </button>
+
+          </div>
+
+          {/* REDES SOCIAIS */}
+          <div className="hero-socials">
+
+            <a
+              href="https://github.com/MateusMacielrj"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mateus-maciel-815b11303/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="#contact"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://wa.me/21965890511"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp
+            </a>
+
+          </div>
+
         </div>
+
+        {/* FOTO */}
+        <div className="hero-image">
+
+          <img
+            src={imgPerfil}
+            alt="Foto de Mateus Maciel"
+          />
+
+        </div>
+
+        {/* TEXTO LATERAL */}
+        <div className="hero-side">
+
+          <span>DISCIPLINA</span>
+          <span>FOCO</span>
+          <span>EVOLUÇÃO</span>
+          <span>SEMPRE</span>
+
+          <div></div>
+
+          <p>
+            "Grandes resultados
+            <br />
+            nascem de consistência."
+          </p>
+
+        </div>
+
       </div>
 
-      <img src={imgPerfil} alt="Foto de Mateus Maciel" />
     </section>
   );
 }

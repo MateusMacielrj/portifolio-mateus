@@ -8,31 +8,89 @@ function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <h1>Mateus Maciel</h1>
+      
+      <div className="header-container">
 
-      <button
-        className="menu-toggle"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Menu"
-      >
-        ☰
-      </button>
+        {/* Logo / Nome */}
+        <a href="#hero" className="logo" onClick={closeMenu}>
+          <span>Mateus</span> <strong>Maciel</strong>
+          <small>Desenvolvedor Front-end</small>
+        </a>
 
-      <nav className={`nav ${isOpen ? "open" : ""}`}>
-        <ul>
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#projects">Portfólio</a></li>
-          <li><a href="#serviços">Serviços</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </nav>
+        {/* Menu mobile */}
+        <button
+          className="menu-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+
+        {/* Navegação */}
+        <nav className={`nav ${isOpen ? "open" : ""}`}>
+          <ul>
+            <li>
+              <a href="#hero" onClick={closeMenu}>
+                Início
+              </a>
+            </li>
+
+            <li>
+              <a href="#about" onClick={closeMenu}>
+                Sobre
+              </a>
+            </li>
+
+            <li>
+              <a href="#skills" onClick={closeMenu}>
+                Habilidades
+              </a>
+            </li>
+
+            <li>
+              <a href="#projects" onClick={closeMenu}>
+                Projetos
+              </a>
+            </li>
+
+            <li>
+              <a href="#serviços" onClick={closeMenu}>
+                Serviços
+              </a>
+            </li>
+
+            <li>
+              <a href="#testimonials" onClick={closeMenu}>
+                Depoimentos
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact" onClick={closeMenu}>
+                Contato
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Botão CTA */}
+        <a href="#contact" className="header-button">
+          Vamos conversar <span>→</span>
+        </a>
+
+      </div>
     </header>
   );
 }

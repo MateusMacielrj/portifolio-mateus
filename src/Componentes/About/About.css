@@ -1,101 +1,463 @@
+/* =========================
+   SOBRE MIM
+========================= */
+
 .sobre {
+  width: 100%;
+
+  padding: 120px 30px;
+
+  background: #080808;
+  color: #ffffff;
+
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.sobre-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.sobre-texto {
+  max-width: 680px;
+}
+
+.sobre-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #d4af37;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.sobre-texto h2 {
+  margin: 0 0 30px;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 600;
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.sobre-texto h2 span {
+  color: #d4af37;
+}
+
+.sobre-texto p {
+  max-width: 620px;
+
+  margin: 0 0 20px;
+
+  color: #999999;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   DIVISOR
+========================= */
+
+.sobre-divisor {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin-bottom: 30px;
+}
+
+.sobre-divisor::before {
+  content: "";
+
+  width: 100%;
+  height: 1px;
+
+  background: #252525;
+}
+
+.sobre-divisor span {
+  position: absolute;
+  left: 0;
+
+  width: 45px;
+  height: 2px;
+
+  background: #d4af37;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.sobre-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  color: #d4af37;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.sobre-button span {
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.sobre-button:hover {
+  color: #f0c75e;
+}
+
+.sobre-button:hover span {
+  transform: translateX(6px);
+}
+
+
+/* =========================
+   LADO DIREITO
+========================= */
+
+.sobre-lateral {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+
+  gap: 45px;
 }
 
-.sobre h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+
+/* =========================
+   FRASE
+========================= */
+
+.sobre-frase {
+  padding-left: 5px;
 }
 
-.sobre p {
-  text-align: left;         
-  width: 90%;
-  max-width: 50rem;         
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 2rem;
+.sobre-frase-linha {
+  width: 40px;
+  height: 1px;
+
+  margin-bottom: 20px;
+
+  background: #d4af37;
 }
 
-.quadros {
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  gap: 2rem;
+.sobre-frase p {
+  max-width: 260px;
+
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  font-style: italic;
+
+  letter-spacing: 0.2px;
 }
 
-.numeros {
+.sobre-frase p span {
+  color: #d4af37;
+
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.sobre-estatisticas {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 20rem;             
-  padding: 1rem 2rem;
-  border: 1px solid #14B8A6;
-  border-radius: 0.5rem;
+
+  gap: 15px;
 }
 
-.numeros span {
-  font-size: 2rem;
-  font-weight: bold;
-  color:  rgba(19, 27, 46, 0.95);
-}
 
-.numeros p {
+/* =========================
+   CARD
+========================= */
+
+.estatistica {
+  position: relative;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.7);
 
+  gap: 22px;
+
+  min-height: 105px;
+
+  padding: 22px 26px;
+
+  background: #111111;
+
+  border: 1px solid #202020;
+  border-left: 2px solid #d4af37;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.estatistica:hover {
+  background: #151515;
+
+  border-color: #2b2b2b;
+  border-left-color: #d4af37;
+
+  transform: translateX(6px);
 }
 
 
+/* =========================
+   ÍCONE
+========================= */
 
-@media (min-width: 769px) {
-  .quadros {
-    justify-content: center;
-    gap: 3rem;
+.estatistica-icon {
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  color: #d4af37;
+
+  stroke-width: 1.5;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.estatistica:hover .estatistica-icon {
+  color: #f0c75e;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.estatistica-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.estatistica-info span {
+  display: block;
+
+  margin: 0;
+
+  color: #d4af37;
+
+  font-size: 32px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.estatistica-info p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .sobre {
+    padding: 100px 30px;
   }
-}
 
-@media (min-width: 1025px) {
- .sobre{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
- 
- }
+  .sobre-container {
+    grid-template-columns: 1fr;
 
- .texto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- }
-
-
-
-.texto p {
-  font-size: 2rem;
- 
-}
- 
-
- .quadros {
- 
-  width: 50%;
- }
-
- .numeros {
-  width: 40%;
- }
+    gap: 60px;
   }
 
-  
+  .sobre-texto {
+    max-width: 750px;
+  }
+
+  .sobre-lateral {
+    gap: 35px;
+  }
+
+  .sobre-frase p {
+    max-width: 400px;
+  }
+
+  .sobre-estatisticas {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+  }
+
+  .estatistica {
+    min-height: 120px;
+
+    padding: 20px;
+
+    gap: 16px;
+  }
+
+  .estatistica-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .estatistica-info span {
+    font-size: 29px;
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .sobre {
+    padding: 80px 20px;
+  }
+
+  .sobre-container {
+    gap: 45px;
+  }
+
+  .sobre-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .sobre-texto h2 {
+    font-size: 38px;
+
+    letter-spacing: -1px;
+  }
+
+  .sobre-texto p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .sobre-divisor {
+    margin-bottom: 25px;
+  }
+
+
+  /* FRASE */
+
+  .sobre-frase {
+    padding-left: 0;
+  }
+
+  .sobre-frase-linha {
+    width: 35px;
+
+    margin-bottom: 16px;
+  }
+
+  .sobre-frase p {
+    max-width: 300px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* CARDS */
+
+  .sobre-estatisticas {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .estatistica {
+    min-height: auto;
+
+    padding: 20px;
+
+    gap: 18px;
+  }
+
+  .estatistica-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .estatistica-info {
+    gap: 5px;
+  }
+
+  .estatistica-info span {
+    font-size: 30px;
+  }
+
+  .estatistica-info p {
+    font-size: 12px;
+  }
+
+}

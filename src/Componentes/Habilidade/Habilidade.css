@@ -1,112 +1,327 @@
-/* ======== Estilo base (Mobile First) ======== */
+/* =========================
+   HABILIDADES
+========================= */
+
 .habilidades {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 120px 30px;
+
+  background: #050505;
+  color: #ffffff;
+
+  border-bottom: 1px solid #1c1c1c;
 }
 
-.habilidades h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 2rem;
+.habilidades-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
 }
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.habilidades-header {
+  max-width: 700px;
+  margin-bottom: 65px;
+}
+
+.habilidades-header > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #d4af37;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.habilidades-header h2 {
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.habilidades-header h2 strong {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.habilidades-header p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   GRID
+========================= */
 
 .habilidades-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
 }
 
-.habilidade-item {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch; /* garante que barra ocupe 100% */
+
+/* =========================
+   CARD
+========================= */
+
+.habilidade-card {
+  position: relative;
+
+  padding: 28px 30px;
+
+  background: #101010;
+
+  border: 1px solid #202020;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.habilidade-card:hover {
+  transform: translateY(-4px);
+
+  background: #141414;
+
+  border-color: #3a321d;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.habilidade-topo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   ÍCONE
+========================= */
+
+.habilidade-icone {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  color: #d4af37;
+
+  background: #171717;
+
+  border: 1px solid #292929;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.habilidade-icone svg {
+  width: 24px;
+  height: 24px;
+
+  stroke-width: 1.5;
+}
+
+.habilidade-card:hover .habilidade-icone {
+  color: #f0c75e;
+
+  border-color: #d4af37;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
 
 .habilidade-info {
+  flex: 1;
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #444;
+  flex-direction: column;
+
+  gap: 5px;
 }
 
-.habilidade-barra-fundo {
+.habilidade-info h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.habilidade-info p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   NÍVEL
+========================= */
+
+.habilidade-nivel {
+  color: #d4af37;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   BARRA
+========================= */
+
+.habilidade-barra {
   width: 100%;
-  height: 12px;
-  background: #e4e4e4;
-  border-radius: 8px;
+  height: 2px;
+
+  background: #252525;
+
   overflow: hidden;
 }
 
-.habilidade-barra-progresso {
+.habilidade-barra span {
+  display: block;
+
   height: 100%;
-  background: #3b82f6;
-  transition: width 0.6s ease-in-out;
-  border-radius: 8px 0 0 8px; /* borda arredondada só à esquerda */
+
+  background: #d4af37;
+
+  transition: width 0.6s ease;
 }
 
-/* ======== Telas médias ======== */
-@media (min-width: 768px) {
-  .habilidades {
-    max-width: 800px;
-    padding: 2.5rem;
-  }
-}
 
-/* ======== Desktop ======== */
-/* ======== Desktop ======== */
-@media (min-width: 1024px) {
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
   .habilidades {
-    max-width: 1100px;
+    padding: 100px 30px;
   }
 
   .habilidades-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 4rem;
+    grid-template-columns: 1fr;
   }
 
-  .habilidade-info {
-    font-size: 1.3rem; /* maior no desktop */
-  }
-
-  .habilidade-barra-fundo {
-    height: 16px; /* antes 12px, só no desktop */
-  }
-
-  .habilidades h2 {
-    font-size: 2.4rem;
-    margin-bottom: 2.5rem;
-  }
 }
 
-/* ======== Telas grandes ======== */
-@media (min-width: 1440px) {
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
   .habilidades {
-    max-width: 1200px;
+    padding: 80px 20px;
+  }
+
+  .habilidades-header {
+    margin-bottom: 45px;
+  }
+
+  .habilidades-header > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .habilidades-header h2 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .habilidades-header p {
+    font-size: 14px;
   }
 
   .habilidades-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem 3rem;
+    gap: 12px;
   }
 
-  .habilidade-info {
-    font-size: 1.4rem;
+  .habilidade-card {
+    padding: 22px;
   }
 
-  .habilidade-barra-fundo {
-    height: 18px; /* aumenta mais em telas grandes */
+  .habilidade-topo {
+    gap: 14px;
   }
 
-  .habilidades h2 {
-    font-size: 2.6rem;
+  .habilidade-icone {
+    width: 44px;
+    height: 44px;
   }
+
+  .habilidade-icone svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .habilidade-info h3 {
+    font-size: 16px;
+  }
+
+  .habilidade-info p {
+    font-size: 11px;
+  }
+
+  .habilidade-nivel {
+    display: none;
+  }
+
 }

@@ -1,108 +1,426 @@
-/* Container principal da seção */
+/* =========================
+   DEPOIMENTOS
+========================= */
+
 .testemunha {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+
+  padding: 120px 30px;
+
+  background: #080808;
+  color: #ffffff;
+
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.testemunha-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 100px;
+
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem; /* Espaçamento interno */
-  background-color: #f9f9f9; /* Cor de fundo suave */
-  text-align: center;
 }
 
-/* Título */
-.testemunha h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.testemunha-header {
+  max-width: 500px;
 }
 
-/* Container do depoimento */
+.testemunha-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #d4af37;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.testemunha-header h2 {
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.testemunha-header h2 strong {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.testemunha-header p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   CARD DO DEPOIMENTO
+========================= */
+
 .depoimento-container {
-  max-width: 600px;
-  min-height: 250px; /* Garante que o container não encolha demais ao trocar o texto */
-  padding: 2.5rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 45px;
+
+  background: #101010;
+
+  border: 1px solid #202020;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.depoimento-container:hover {
+  border-color: #3a321d;
+
+  transform: translateY(-4px);
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.depoimento-topo {
+  display: flex;
+
   align-items: center;
-  margin-bottom: 2rem;
-  transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave */
+
+  justify-content: space-between;
+
+  margin-bottom: 30px;
 }
 
-/* Imagem de perfil */
+
+/* =========================
+   ASPAS
+========================= */
+
+.depoimento-aspas {
+  color: #d4af37;
+
+  font-family: Georgia, serif;
+
+  font-size: 80px;
+
+  line-height: 0.6;
+
+  opacity: 0.8;
+}
+
+
+/* =========================
+   CLIENTE
+========================= */
+
+.depoimento-cliente {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
 .imagem-depoimento {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%; /* Torna a imagem circular */
-  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
-  border: 3px solid #6c63ff; /* Borda colorida */
-  margin-bottom: 1rem;
+  width: 58px;
+  height: 58px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 1px solid #d4af37;
 }
 
-/* Texto do depoimento */
-.depoimento-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
+.depoimento-cliente div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
 }
 
-/* Nome do cliente */
-.depoimento-container p strong {
-  display: block; /* Para o nome ficar em uma nova linha */
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #333;
+.depoimento-cliente strong {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* Container das setas */
+.depoimento-cliente span {
+  color: #777777;
+
+  font-size: 11px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.depoimento-texto {
+  margin: 0;
+
+  color: #a0a0a0;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+  font-style: italic;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.depoimento-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #242424;
+}
+
+
+/* =========================
+   INDICADOR
+========================= */
+
+.depoimento-indicador {
+  color: #d4af37;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.depoimento-indicador span {
+  color: #555555;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
 .botoes-setas {
   display: flex;
-  gap: 1.5rem; /* Espaço entre os botões */
+
+  gap: 10px;
 }
 
-/* Estilo dos botões */
 .botoes-setas button {
-  background-color: transparent;
-  border: none;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 1px solid #292929;
+
   cursor: pointer;
-  padding: 0.5rem;
-  transition: transform 0.2s ease-in-out; /* Efeito de transição ao clicar */
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.botoes-setas button img {
+  width: 16px;
+  height: 16px;
+
+  object-fit: contain;
+
+  opacity: 0.7;
+
+  transition: opacity 0.3s ease;
 }
 
 .botoes-setas button:hover {
-  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+  background: #d4af37;
+
+  border-color: #d4af37;
+
+  transform: translateY(-2px);
 }
 
-/* Imagens das setas */
-.botoes-setas img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0.5); /* Escurece a imagem da seta */
+.botoes-setas button:hover img {
+  opacity: 1;
 }
 
 
-@media (min-width: 1025px) {
-  .testemunha h1 {
- 
-  
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .testemunha {
+    padding: 100px 30px;
+  }
+
+  .testemunha-container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .testemunha-header {
+    max-width: 700px;
+  }
+
+  .testemunha-header p {
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .testemunha {
+    padding: 80px 20px;
+  }
+
+  .testemunha-container {
+    gap: 40px;
+  }
+
+  .testemunha-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .testemunha-header h2 {
+    font-size: 36px;
+
+    letter-spacing: -1px;
+  }
+
+  .testemunha-header p {
+    font-size: 14px;
   }
 
 
+  /* CARD */
+
   .depoimento-container {
-  max-width: 1000px;
-  min-height: 250px; 
-  height: 60rem;
-}
+    min-height: 380px;
 
-.depoimento-container img{
-  width: 18rem;
-  height: 20rem;
-}
+    padding: 25px;
+  }
 
-.depoimento-container p {
-  font-size: 2rem;
-}
+
+  /* TOPO */
+
+  .depoimento-topo {
+    margin-bottom: 25px;
+  }
+
+
+  /* ASPAS */
+
+  .depoimento-aspas {
+    font-size: 60px;
+  }
+
+
+  /* CLIENTE */
+
+  .imagem-depoimento {
+    width: 48px;
+    height: 48px;
+  }
+
+  .depoimento-cliente {
+    gap: 10px;
+  }
+
+  .depoimento-cliente strong {
+    font-size: 13px;
+  }
+
+
+  /* TEXTO */
+
+  .depoimento-texto {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+
+  /* RODAPÉ */
+
+  .depoimento-footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+  }
+
+
+  /* BOTÕES */
+
+  .botoes-setas button {
+    width: 38px;
+    height: 38px;
+  }
+
 }
