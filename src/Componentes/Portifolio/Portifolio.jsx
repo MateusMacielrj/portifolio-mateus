@@ -7,9 +7,18 @@ import imagemProjetoCard from "../../assets/card-react.png";
 import imagemElencofFutebol from "../../assets/elenco-futebol.png";
 import imagemGitubpesquisa from "../../assets/github-pesquisa.png";
 import imagemFilme from "../../assets/movie-app.png";
+import imagemBarberpro from "../../assets/projeto-barberpro.png";
 
 function Portfolio() {
   const projetos = [
+    {
+      imagem: imagemBarberpro,
+      titulo: "CineFinder",
+      descricao:
+        "Sistema de agendamento para barbearia desenvolvido em React, com seleção de serviços, data e horário, revisão e confirmação do agendamento, utilizando componentização, gerenciamento de estado e React Router.",
+      tags: ["React", "JavaScript", "CSS", "API"],
+      link: "https://mateusmacielrj.github.io/BarberPro/",
+    },
     {
       imagem: imagemFilme,
       titulo: "CineFinder",
@@ -94,13 +103,9 @@ function Portfolio() {
 
   return (
     <section className="portfolio-container" id="projects">
-
       {/* CABEÇALHO */}
       <div className="portfolio-header">
-
-        <span className="portfolio-label">
-          PORTFÓLIO
-        </span>
+        <span className="portfolio-label">PORTFÓLIO</span>
 
         <h2>
           Projetos que transformam
@@ -109,24 +114,19 @@ function Portfolio() {
         </h2>
 
         <p>
-          Uma seleção de projetos desenvolvidos durante minha jornada
-          de aprendizado em desenvolvimento Front-end.
+          Uma seleção de projetos desenvolvidos durante minha jornada de
+          aprendizado em desenvolvimento Front-end.
         </p>
-
       </div>
 
       {/* FILTROS */}
       <div className="portfolio-filtros">
-        <button className="filtro-ativo">
-          Todos
-        </button>
+        <button className="filtro-ativo">Todos</button>
       </div>
 
       {/* PROJETOS */}
       <div className="portfolio-lista">
-
         {projetos.map((projeto, index) => (
-
           <a
             key={index}
             href={projeto.link}
@@ -134,59 +134,32 @@ function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
           >
-
             <article className="portfolio-card">
-
               <div className="portfolio-card-imagem">
-
-                <img
-                  src={projeto.imagem}
-                  alt={projeto.titulo}
-                />
+                <img src={projeto.imagem} alt={projeto.titulo} />
 
                 <div className="portfolio-overlay">
-                  <span>
-                    Ver projeto →
-                  </span>
+                  <span>Ver projeto →</span>
                 </div>
-
               </div>
 
               <div className="portfolio-card-conteudo">
+                <h3>{projeto.titulo}</h3>
 
-                <h3>
-                  {projeto.titulo}
-                </h3>
-
-                <p>
-                  {projeto.descricao}
-                </p>
+                <p>{projeto.descricao}</p>
 
                 <div className="portfolio-card-tags">
-
                   {projeto.tags.map((tag, tagIndex) => (
-
-                    <span
-                      key={tagIndex}
-                      className="tag-item"
-                    >
+                    <span key={tagIndex} className="tag-item">
                       {tag}
                     </span>
-
                   ))}
-
                 </div>
-
               </div>
-
             </article>
-
           </a>
-
         ))}
-
       </div>
-
     </section>
   );
 }
